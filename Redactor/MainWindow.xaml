@@ -1,0 +1,110 @@
+﻿<Window x:Class="Redactor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Redactor"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <!-- Верхняя панель инструментов -->
+        <ToolBar DockPanel.Dock="Top">
+            <Button Content="Отмена"/>
+            <Separator/>
+            <Button Content="Возврат"/>
+            <Separator/>
+            <Button Content="Копировать"/>
+            <Separator/>
+            <Button Content="Вырезать"/>
+            <Separator/>
+            <Button Content="Вставить"/>
+            <Separator/>
+            <Button Content="Обрезать по рамке"/>
+            <!-- Другие кнопки инструментов -->
+        </ToolBar>
+
+        <!-- Боковая панель инструментов с иконками и подписями -->
+        <ToolBar DockPanel.Dock="Left" VerticalAlignment="Stretch">
+            <UniformGrid Rows="8" Columns="4">
+                <Button>
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="C:\Users\Евгений\Documents\Учеба Академия ТОР\WPF\Redactor\Redactor\Icons\Vydelenie.png" Width="20" Height="20" VerticalAlignment="Top"/>
+                        <TextBlock Text="Выделение" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button>
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="C:\Users\Евгений\Documents\Учеба Академия ТОР\WPF\Redactor\Redactor\Icons\Brush.png" Width="20" Height="20" VerticalAlignment="Top"/>
+                        <TextBlock Text="Кисть" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button>
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="C:\Users\Евгений\Documents\Учеба Академия ТОР\WPF\Redactor\Redactor\Icons\Tools.png" Width="20" Height="20" VerticalAlignment="Top"/>
+                        <TextBlock Text="Инструменты" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button>
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="C:\Users\Евгений\Documents\Учеба Академия ТОР\WPF\Redactor\Redactor\Icons\Figures.png" Width="20" Height="20" VerticalAlignment="Top"/>
+                        <TextBlock Text="Фигуры" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button>
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="C:\Users\Евгений\Documents\Учеба Академия ТОР\WPF\Redactor\Redactor\Icons\Add.png" Width="20" Height="20" VerticalAlignment="Top"/>
+                        <TextBlock Text="Добавление" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button>
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="C:\Users\Евгений\Documents\Учеба Академия ТОР\WPF\Redactor\Redactor\Icons\Color.png" Width="20" Height="20" VerticalAlignment="Top"/>
+                        <TextBlock Text="Палитра" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button>
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="C:\Users\Евгений\Documents\Учеба Академия ТОР\WPF\Redactor\Redactor\Icons\Frontsize.png" Width="20" Height="20" VerticalAlignment="Top"/>
+                        <TextBlock Text="Шрифты" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button>
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="C:\Users\Евгений\Documents\Учеба Академия ТОР\WPF\Redactor\Redactor\Icons\Image.png" Width="20" Height="20" VerticalAlignment="Top"/>
+                        <TextBlock Text="Картинка" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button>
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="C:\Users\Евгений\Documents\Учеба Академия ТОР\WPF\Redactor\Redactor\Icons\lines.png" Width="20" Height="20" VerticalAlignment="Top"/>
+                        <TextBlock Text="Линии" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button>
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="C:\Users\Евгений\Documents\Учеба Академия ТОР\WPF\Redactor\Redactor\Icons\Text.png" Width="20" Height="20" VerticalAlignment="Top"/>
+                        <TextBlock Text="Текст" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </UniformGrid>
+        </ToolBar>
+
+        <!-- Основная область рисования -->
+        <Canvas Name="drawingCanvas" Background="White" DockPanel.Dock="Right"/>
+
+        <!-- Панель состояния StatusBar -->
+        <StatusBar VerticalAlignment="Bottom">
+            <StatusBarItem>
+                <TextBlock x:Name="cursorPositionText" Text="Координаты: (X, Y)" />
+            </StatusBarItem>
+            <Separator/>
+            <StatusBarItem>
+                <TextBlock x:Name="canvasSizeText" Text="Размеры полотна: Width x Height" />
+            </StatusBarItem>
+            <Separator/>
+            <StatusBarItem>
+                <TextBlock x:Name="zoomPercentageText" Text="Приближение: 100%" />
+            </StatusBarItem>
+        </StatusBar>
+    </DockPanel>
+</Window>
